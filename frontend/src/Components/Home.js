@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -13,7 +13,9 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
+      <h1>
         Welcome
+      </h1>
         <br />
         <button onClick={this.signOutUser}>Logout</button>
       </div>

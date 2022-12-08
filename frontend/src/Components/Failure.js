@@ -12,7 +12,7 @@ const Failure = ({auth, history, location}) => {
           auth.setAuthenticated(val);
           history.push('/signin');
         });
-  }, []);
+  }, [auth,history]);
 
 
   return (

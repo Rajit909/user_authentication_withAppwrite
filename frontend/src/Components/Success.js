@@ -3,13 +3,13 @@ import {useEffect} from 'react';
 
 
 const Success = ({history, auth}) => {
-  useEffect(()=>{
+  useEffect((history,auth)=>{
     auth.checkAuthenticated()
         .then((val)=>{
           auth.setAuthenticated(val);
           history.push('/');
         });
-  }, []);
+  }, [auth]);
 
   return (
     <div> Success </div>

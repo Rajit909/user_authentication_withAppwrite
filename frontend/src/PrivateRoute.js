@@ -1,11 +1,10 @@
 import React from 'react';
-import {Route, Redirect} from 'react-router-dom';
+import {Route, Navigate} from 'react-router-dom';
 
 
-const PrivateRoute = ({appwrite: appwrite, component: Component, auth: auth, ...rest}) => (
+const PrivateRoute = ({appwrite, component: Component, auth, ...rest}) => (
   <Route {...rest} render={(props) => {
-    return localStorage.getItem('auth_state') ? <Component {...props} auth = {auth} /> : <Redirect to='/signin' />;
-  }} />
+    return localStorage.getItem('auth_state') ? <Component {...props} auth = {auth} /> : <Navigate to='/signin' />}} />
 );
 
 export default PrivateRoute;
